@@ -1,0 +1,27 @@
+{
+    "java.project.referencedLibraries": [   // Добавитб все файлы в проект 
+        "lib/**/*.jar",
+        "/lib/*.jar"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "localhost",
+            "database": "test",
+            "username": "lindx",
+            "password": "MySql12345!"
+        }
+    ],
+    "files.exclude": {
+        "**/.classpath": false,
+        "**/.project": false,
+        "**/.settings": false,
+        "**/.factorypath": false
+    },
+}
