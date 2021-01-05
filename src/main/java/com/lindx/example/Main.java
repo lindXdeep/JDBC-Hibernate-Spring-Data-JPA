@@ -22,14 +22,24 @@ public class Main {
             address.setCity("California");
             address.setStreet("Stars");
             address.setPostCode("123-456-789");
+
+        Address address2 = new Address();
+            address.setId(1L);
+            address.setCountry("Russia");
+            address.setCity("Spb");
+            address.setStreet("asdf");
+            address.setPostCode("321-456-789");
         
         AddressService addressService = new AddressService();
 
-        //addressService.add(address);
+        addressService.add(address);
 
         addressService.getAll().stream().forEach(System.out::println);
 
         addressService.getByAddressId(1L).toString().lines().forEach(System.out::println);
-       
+
+        addressService.update(address);
+
+        addressService.getByAddressId(1L).toString().lines().forEach(System.out::println);
     }
 }
