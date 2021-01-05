@@ -17,16 +17,11 @@ public class Util {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } 
-        
-        try {
             connection = DriverManager.getConnection(url+param, user, pass);
             System.out.println("Connection Succsesfull");
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-        }
+        } 
         return connection;
     }
 }
