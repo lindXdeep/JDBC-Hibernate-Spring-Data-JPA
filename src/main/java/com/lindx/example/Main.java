@@ -16,30 +16,31 @@ public class Main {
     static Statement statement = null;
     public static void main(String[] args) {
         
-        Address address = new Address();
-            address.setId(1L);
-            address.setCountry("USA");
-            address.setCity("California");
-            address.setStreet("Stars");
-            address.setPostCode("123-456-789");
+        Address addressUSA = new Address();
+            addressUSA.setId(1L);
+            addressUSA.setCountry("USA");
+            addressUSA.setCity("California");
+            addressUSA.setStreet("Stars");
+            addressUSA.setPostCode("123-456-789");
 
-        Address address2 = new Address();
-            address.setId(1L);
-            address.setCountry("Russia");
-            address.setCity("Spb");
-            address.setStreet("asdf");
-            address.setPostCode("321-456-789");
+        Address addressRU = new Address();
+            addressRU.setId(1L);
+            addressRU.setCountry("Russia");
+            addressRU.setCity("Spb");
+            addressRU.setStreet("asdf");
+            addressRU.setPostCode("321-456-789");
         
         AddressService addressService = new AddressService();
 
-        addressService.add(address);
+        addressService.add(addressUSA);
 
         addressService.getAll().stream().forEach(System.out::println);
 
-        addressService.getByAddressId(1L).toString().lines().forEach(System.out::println);
+        addressService.getByAddressId(addressUSA.getId()).toString().lines().forEach(System.out::println);
 
-        addressService.update(address);
+        addressService.update(addressRU);
+        addressService.getByAddressId(addressRU.getId()).toString().lines().forEach(System.out::println);
 
-        addressService.getByAddressId(1L).toString().lines().forEach(System.out::println);
+        addressService.remove(addressRU);
     }
 }
