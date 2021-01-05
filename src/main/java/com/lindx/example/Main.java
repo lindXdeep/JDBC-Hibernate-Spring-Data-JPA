@@ -3,10 +3,15 @@ package com.lindx.example;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
+import com.lindx.example.dao.AddressDAO;
+import com.lindx.example.dao.EmployeeDAO;
 import com.lindx.example.entity.Address;
+import com.lindx.example.entity.Employee;
 import com.lindx.example.service.AddressService;
+import com.lindx.example.service.EmployeeService;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.Statement;
 import java.util.List;
 
@@ -30,17 +35,30 @@ public class Main {
             addressRU.setStreet("asdf");
             addressRU.setPostCode("321-456-789");
         
-        AddressService addressService = new AddressService();
+        AddressDAO address = new AddressService();
 
-        addressService.add(addressUSA);
+        address.add(addressUSA);
 
-        addressService.getAll().stream().forEach(System.out::println);
+        address.getAll().stream().forEach(System.out::println);
 
-        addressService.getByAddressId(addressUSA.getId()).toString().lines().forEach(System.out::println);
+        address.getByAddressId(addressUSA.getId()).toString().lines().forEach(System.out::println);
 
-        addressService.update(addressRU);
-        addressService.getByAddressId(addressRU.getId()).toString().lines().forEach(System.out::println);
+        address.update(addressRU);
+        address.getByAddressId(addressRU.getId()).toString().lines().forEach(System.out::println);
 
-        addressService.remove(addressRU);
+        address.remove(addressRU);
+
+        
+
+        Employee employeeTom = new Employee();
+            employeeTom.setId(1L);
+            employeeTom.setFirstname("Tom");
+            employeeTom.setLastname("Johnson");
+            employeeTom.setBirthday(new Date(19880631));
+            employeeTom.setAddressID(1L);
+
+        EmployeeDAO employee = new EmployeeService();
+
+        employee.add(employeeTom);
     }
 }
