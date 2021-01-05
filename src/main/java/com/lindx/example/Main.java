@@ -4,12 +4,15 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.lindx.example.dao.AddressDAO;
+import com.lindx.example.dao.EmplProjDAO;
 import com.lindx.example.dao.EmployeeDAO;
 import com.lindx.example.dao.ProjectDAO;
 import com.lindx.example.entity.Address;
+import com.lindx.example.entity.EmplProj;
 import com.lindx.example.entity.Employee;
 import com.lindx.example.entity.Project;
 import com.lindx.example.service.AddressService;
+import com.lindx.example.service.EmplProjService;
 import com.lindx.example.service.EmployeeService;
 import com.lindx.example.service.ProjectService;
 
@@ -99,6 +102,21 @@ public class Main {
         projects.getByProjectId(projectRun.getId()).toString().lines().forEach(System.out::print);
 
         projects.remove(projectRun);
+
+        EmplProj eProj = new EmplProj();
+            eProj.setEmploeeID(employeeBob.getId());
+            eProj.setProjectID(projectRun.getId());
+
+        EmplProjDAO emplProj = new EmplProjService();
+
+        emplProj.add(eProj);
+        emplProj.getAll().stream().forEach(System.out::println);
+
+        emplProj.update(eProj);
+
+        emplProj.getByEmplProjId(eProj.getEmploeeID());
+
+        emplProj.remove(eProj);
 
 
     }
