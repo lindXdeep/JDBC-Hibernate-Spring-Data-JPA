@@ -13,8 +13,6 @@ import com.lindx.example.service.EmployeeService;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Statement;
-import java.util.List;
-
 public class Main {
 
     static Connection connection = null;
@@ -48,17 +46,32 @@ public class Main {
 
         address.remove(addressRU);
 
-        
+    
 
         Employee employeeTom = new Employee();
             employeeTom.setId(1L);
             employeeTom.setFirstname("Tom");
             employeeTom.setLastname("Johnson");
             employeeTom.setBirthday(new Date(19880631));
-            employeeTom.setAddressID(1L);
+            employeeTom.setAddressID(10L);
 
-        EmployeeDAO employee = new EmployeeService();
+        Employee employeeBob = new Employee();
+            employeeBob.setId(1L);
+            employeeBob.setFirstname("Bob");
+            employeeBob.setLastname("Smith");
+            employeeBob.setBirthday(new Date(19980130));
+            employeeBob.setAddressID(10L);
 
-        employee.add(employeeTom);
+        EmployeeDAO employees = new EmployeeService();
+
+        employees.add(employeeTom);
+
+        employees.getAll().forEach(System.out::println);
+    
+        employees.update(employeeBob);
+        //employees.getByEmployeeId(employeeBob.getId()).toString().lines().forEach(System.out::println);
+        employees.getAll().forEach(System.out::println);
+
+        employees.remove(employeeBob);
     }
 }
