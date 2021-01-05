@@ -5,10 +5,13 @@ import org.junit.Test;
 
 import com.lindx.example.dao.AddressDAO;
 import com.lindx.example.dao.EmployeeDAO;
+import com.lindx.example.dao.ProjectDAO;
 import com.lindx.example.entity.Address;
 import com.lindx.example.entity.Employee;
+import com.lindx.example.entity.Project;
 import com.lindx.example.service.AddressService;
 import com.lindx.example.service.EmployeeService;
+import com.lindx.example.service.ProjectService;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -69,9 +72,34 @@ public class Main {
         employees.getAll().forEach(System.out::println);
     
         employees.update(employeeBob);
-        //employees.getByEmployeeId(employeeBob.getId()).toString().lines().forEach(System.out::println);
+        employees.getByEmployeeId(employeeBob.getId()).toString().lines().forEach(System.out::println);
         employees.getAll().forEach(System.out::println);
 
         employees.remove(employeeBob);
+
+
+
+        Project projectTest = new Project();
+            projectTest.setId(10L);
+            projectTest.setTitle("Test");
+        
+        Project projectRun = new Project();
+            projectRun.setId(10L);
+            projectRun.setTitle("Runnable");
+
+        ProjectDAO projects = new ProjectService();
+
+        projects.add(projectTest);
+
+       
+        projects.getProjects().stream().forEach(System.out::println);
+
+        projects.update(projectRun);
+
+        projects.getByProjectId(projectRun.getId()).toString().lines().forEach(System.out::print);
+
+        projects.remove(projectRun);
+
+
     }
 }
