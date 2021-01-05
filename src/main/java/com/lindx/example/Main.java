@@ -25,9 +25,11 @@ public class Main {
         
         AddressService addressService = new AddressService();
 
-       List<Address> addresses =  addressService.getAll();
+        //addressService.add(address);
 
-       System.out.println(addresses);
+        addressService.getAll().stream().forEach(System.out::println);
+
+        addressService.getByAddressId(1L).toString().lines().forEach(System.out::println);
        
     }
 }
