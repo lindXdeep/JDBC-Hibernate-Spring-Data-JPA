@@ -1,14 +1,15 @@
 package com.lindx.example.entity;
 
 import java.sql.Date;
-import java.util.Objects;
+import java.util.Set;
 
 public class Employee {
     private Long id;
     private String firstname;
     private String lastname;
     private Date birthday;
-    private Long addressID;
+    private Address address;
+    private Set<Project> projects;
 
     public Employee() {
     }
@@ -20,29 +21,8 @@ public class Employee {
             ", firstname='" + firstname + "'" +
             ", lastname='" + lastname + "'" +
             ", birthday='" + birthday + "'" +
-            ", addressID='" + addressID + "'" +
+            ", address='" + address + "'" +
             "}";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if(o == this)
-           return true;
-        if(o ==null || this.getClass() != o.getClass())
-           return false;
-    
-        Employee employee = (Employee) o;
-    
-        return Objects.equals(id, employee.id) && 
-                Objects.equals(firstname, employee.firstname) && 
-                Objects.equals(lastname, employee.lastname) && 
-                Objects.equals(birthday, employee.birthday) && 
-                Objects.equals(addressID, employee.addressID);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstname, lastname, birthday, addressID);
     }
 
     public Long getId() {
@@ -77,11 +57,19 @@ public class Employee {
         this.birthday = birthday;
     }
 
-    public Long getAddressID() {
-        return addressID;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressID(Long addressID) {
-        this.addressID = addressID;
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
     }
 }

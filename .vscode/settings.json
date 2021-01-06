@@ -24,4 +24,6 @@
         "**/.settings": false,
         "**/.factorypath": false
     },
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
 }

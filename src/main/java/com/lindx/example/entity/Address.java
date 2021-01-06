@@ -1,34 +1,10 @@
 package com.lindx.example.entity;
-
-import java.util.Objects;
-
 public class Address {
     private Long id;
     private String country;
     private String city;
     private String street;
     private String postCode;
-
-    @Override
-    public boolean equals(Object o) {
-        if(o == this)
-            return true;
-        if(o ==null || this.getClass() != o.getClass())
-            return false;
-        
-        Address address = (Address) o;
-
-        return Objects.equals(id, address.id) && 
-               Objects.equals(country, address.country) && 
-               Objects.equals(city, address.city) && 
-               Objects.equals(street, address.street) && 
-               Objects.equals(postCode, address.postCode);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, country, city, street, postCode);
-    }
 
     @Override
     public String toString() {

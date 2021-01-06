@@ -1,10 +1,10 @@
 package com.lindx.example.entity;
 
-import java.util.Objects;
-
+import java.util.Set;
 public class Project {
     private Long id;
     private String title;
+    private Set<Employee> employees;
 
     public Project() {
     }
@@ -25,22 +25,12 @@ public class Project {
         this.title = title;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if(o == this)
-           return true;
-        if(o ==null || this.getClass() != o.getClass())
-           return false;
-    
-        Project project = (Project) o;
-    
-        return Objects.equals(id, project.id) && 
-                Objects.equals(title, project.title);
+    public Set<Employee> getEmployees() {
+        return employees;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title);
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
     }
 
     @Override
