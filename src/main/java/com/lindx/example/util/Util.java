@@ -9,10 +9,11 @@ public class Util {
 
     public static Connection getConnection() {
 
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/test1";
         String user = "lindx";
         String pass = "MySql12345!";
         String param = "?autoReconnect=true&useSSL=false";
+
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
