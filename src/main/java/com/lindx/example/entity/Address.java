@@ -1,9 +1,30 @@
 package com.lindx.example.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entit
+@Table(name = ADDRESS)
 public class Address {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = COUNTRY)
     private String country;
+
+    @Column(name = CITY)
     private String city;
+
+    @Column(name = STREET)
     private String street;
+
+    @Column(name = POSTCODE, length = 10)
     private String postcode;
 
     public Address() {
