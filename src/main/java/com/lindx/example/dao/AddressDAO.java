@@ -8,7 +8,7 @@ public interface AddressDAO {
 
     void add(Address address);
     void update(Address address);
-    Void remove(Address address);
+    void remove(Address address);
 
     Address getByAddressId(Long id);
     

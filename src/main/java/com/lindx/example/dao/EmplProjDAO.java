@@ -8,7 +8,7 @@ public interface EmplProjDAO {
     
     void add(EmplProj emplproj);
     void update(EmplProj emplproj);
-    Void remove(EmplProj emplproj);
+    void remove(EmplProj emplproj);
 
     EmplProj getByEmplProjId(Long id);
     

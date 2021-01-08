@@ -8,9 +8,9 @@ public interface ProjectDAO {
     
     void add(Project project);
     void update(Project project);
-    Void remove(Project project);
+    void remove(Project project);
 
     Project getByProjectId(Long id);
     
-    List<Project> getProject();
+    List<Project> getProjects();
 }
