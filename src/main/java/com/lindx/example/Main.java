@@ -1,8 +1,5 @@
 package com.lindx.example;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-
 import com.lindx.example.dao.AddressDAO;
 import com.lindx.example.dao.EmplProjDAO;
 import com.lindx.example.dao.EmployeeDAO;

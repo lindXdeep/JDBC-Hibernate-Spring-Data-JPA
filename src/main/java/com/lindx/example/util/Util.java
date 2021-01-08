@@ -14,7 +14,6 @@ public class Util {
         String pass = "MySql12345!";
         String param = "?autoReconnect=true&useSSL=false";
 
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url + param, user, pass);
