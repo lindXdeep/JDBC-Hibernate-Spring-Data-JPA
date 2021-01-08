@@ -1,4 +1,7 @@
 {
+   
+    
+    
     "java.project.referencedLibraries": [   // Добавитб все файлы в проект 
         "lib/**/*.jar",
         "/lib/*.jar"
@@ -26,4 +29,16 @@
     },
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
+    "java.completion.favoriteStaticMembers": [
+
+        "org.junit.Assert.*",
+        "org.junit.Assume.*",
+        "org.junit.jupiter.api.Assertions.*",
+        "org.junit.jupiter.api.Assumptions.*",
+        "org.junit.jupiter.api.DynamicContainer.*",
+        "org.junit.jupiter.api.DynamicTest.*",
+        "org.mockito.Mockito.*",
+        "org.mockito.ArgumentMatchers.*",
+        "org.mockito.Answers.*"
+    ],
 }

@@ -4,20 +4,20 @@ public class Address {
     private String country;
     private String city;
     private String street;
-    private String postCode;
+    private String postcode;
+
+    public Address() {
+    }
 
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", country='" + getCountry() + "'" +
-            ", city='" + getCity() + "'" +
-            ", street='" + getStreet() + "'" +
-            ", postCode='" + getPostCode() + "'" +
+            " id='" + id + "'" +
+            ", country='" + country + "'" +
+            ", city='" + city + "'" +
+            ", street='" + street + "'" +
+            ", postcode='" + postcode + "'" +
             "}";
-    }
-
-    public Address() {
     }
 
     public Long getId() {
@@ -52,11 +52,11 @@ public class Address {
         this.street = street;
     }
 
-    public String getPostCode() {
-        return this.postCode;
+    public String getPostcode() {
+        return this.postcode;
     }
 
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 }
