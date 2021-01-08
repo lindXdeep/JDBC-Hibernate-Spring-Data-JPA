@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
-    private static File cfg = new File("/home/lindx/ProjectsPreproject/NyProject5/src/main/resources/hibernate.cfg.xml");
+    private static File cfg = new File("src/main/resources/hibernate.cfg.xml");
 
     private static SessionFactory sessionFactory = buildSessionFactory();
 

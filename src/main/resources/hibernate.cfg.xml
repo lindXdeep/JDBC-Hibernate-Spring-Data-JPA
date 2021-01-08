@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
-<hibernate-mapping>
-    <class name="com.lindx.example.entity.Project" table="PROJECT">
-        <id name="id" type="java.lang.Long">
-            <column name="id" />
-            <generator class="identity" />
-        </id>   
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test2?autoReconnect=true&amp;useSSL=false</property>
+        <property name="hibernate.connection.username">lindx</property>
+        <property name="hibernate.connection.password">MySql12345!</property>
+    
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+       
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <!-- <property name="hibernate.connection.pool_size">1</property> -->
+        <property name="show_sql">true</property>
+
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property> 
         
-        <property name="title" type="string">
-            <column name="title" length="255" not-null="true" />
-        </property>
-
-        <set name="employees" table="EMPL_PROJ"
-             inverse="false" lazy="true" fetch="select" cascade="all" >
-            <key>
-                <column name="project_id" not-null="true" />
-            </key>
-            <many-to-many entity-name="com.lindx.example.entity.Employee">
-                <column name="employee_id" not-null="true" />
-            </many-to-many>
-        </set>
-
-    </class>
-</hibernate-mapping>
+        <mapping resource="mapping/Address.hbm.xml"></mapping>
+        <mapping resource="mapping/Employee.hbm.xml"></mapping>
+        <mapping resource="mapping/Project.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>
