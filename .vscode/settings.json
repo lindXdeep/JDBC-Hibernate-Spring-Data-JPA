@@ -1,11 +1,20 @@
 {
-   
+    "files.exclude": {
+        "**/.classpath": false,
+        "**/.project": false,
+        "**/.settings": false,
+        "**/.factorypath": false
+    },
+
+    "java.home": "/home/lindx/dev-libs/java/jdk-14.0.1",
+
+    "java.project.exportJar.targetPath": "${workspaceFolder}/App.jar",
     
-    
-    "java.project.referencedLibraries": [   // Добавитб все файлы в проект 
+    "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "/lib/*.jar"
+        "lib/*.jar"
     ],
+
     "sqltools.connections": [
         {
             "mysqlOptions": {
@@ -16,29 +25,23 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "localhost",
-            "database": "test",
+            "database": "test1",
             "username": "lindx",
             "password": "MySql12345!"
         }
     ],
-    "files.exclude": {
-        "**/.classpath": false,
-        "**/.project": false,
-        "**/.settings": false,
-        "**/.factorypath": false
-    },
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "java.completion.favoriteStaticMembers": [
 
-        "org.junit.Assert.*",
-        "org.junit.Assume.*",
-        "org.junit.jupiter.api.Assertions.*",
-        "org.junit.jupiter.api.Assumptions.*",
-        "org.junit.jupiter.api.DynamicContainer.*",
-        "org.junit.jupiter.api.DynamicTest.*",
-        "org.mockito.Mockito.*",
-        "org.mockito.ArgumentMatchers.*",
-        "org.mockito.Answers.*"
+    "database.connections": [
+        {
+            "type": "mysql",
+            "name": "lindx@localhost (MySql)",
+            "host": "localhost:3306",
+            "username": "lindx",
+            "database": "test1",
+            "password": "MySql12345!"
+        }
     ],
+
+    "workspaceCacheClean.silent": false,
+    "workspaceCacheClean.autoReload": false,
 }

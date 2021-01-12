@@ -7,24 +7,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entit
-@Table(name = ADDRESS)
+@Entity
+@Table(name = "ADDRESS")
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = COUNTRY)
+    @Column(name = "country")
     private String country;
 
-    @Column(name = CITY)
+    @Column(name = "city")
     private String city;
 
-    @Column(name = STREET)
+    @Column(name = "street")
     private String street;
 
-    @Column(name = POSTCODE, length = 10)
+    @Column(name = "postcode", length = 10)
     private String postcode;
 
     public Address() {

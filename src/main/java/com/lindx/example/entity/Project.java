@@ -1,9 +1,22 @@
 package com.lindx.example.entity;
 
 import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 public class Project {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @ManyToMany(mappedBy = "projects")
     private Set<Employee> employees;
 
     public Project() {
