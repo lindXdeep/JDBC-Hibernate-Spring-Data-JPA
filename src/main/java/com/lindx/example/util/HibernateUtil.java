@@ -1,6 +1,5 @@
 package com.lindx.example.util;
 
-import java.io.File;
 import java.util.Properties;
 
 import com.lindx.example.entity.Address;
@@ -15,6 +14,7 @@ public class HibernateUtil {
 
     private static Properties properties = null;
     private static Configuration cfg = null;
+    private static SessionFactory sessionFactory = null;
 
     static {
         properties = new Properties();
@@ -31,12 +31,13 @@ public class HibernateUtil {
 
         cfg = new Configuration();
         cfg.setProperties(properties);
+        
         cfg.addAnnotatedClass(Address.class);
         cfg.addAnnotatedClass(Employee.class);
         cfg.addAnnotatedClass(Project.class);
-    }
 
-    private static SessionFactory sessionFactory = buildSessionFactory();
+        sessionFactory = buildSessionFactory();
+    }
 
     private static SessionFactory buildSessionFactory() {
 
